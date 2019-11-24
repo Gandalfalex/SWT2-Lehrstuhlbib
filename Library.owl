@@ -55,6 +55,16 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -88,10 +98,30 @@ Media_Objects are Objects to be borrowed from the library</definition>
     
 
 
+    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banCustomer -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banCustomer">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
     </owl:ObjectProperty>
     
 
@@ -100,6 +130,8 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banEmployee">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#enableEmployee"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
     </owl:ObjectProperty>
     
 
@@ -108,6 +140,7 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#createEmployee">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
     </owl:ObjectProperty>
     
 
@@ -116,6 +149,25 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#createUser">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
     </owl:ObjectProperty>
     
 
@@ -124,6 +176,7 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editAdmin">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
     </owl:ObjectProperty>
     
 
@@ -132,6 +185,17 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editCustomer">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
     </owl:ObjectProperty>
     
 
@@ -140,6 +204,15 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editEmployee">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
     </owl:ObjectProperty>
     
 
@@ -148,6 +221,16 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#enableEmployee">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
     </owl:ObjectProperty>
     
 
@@ -192,6 +275,25 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#incorporateMedia">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
     </owl:ObjectProperty>
     
 
@@ -236,6 +338,15 @@ Media_Objects are Objects to be borrowed from the library</definition>
     
 
 
+    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -262,8 +373,6 @@ Media_Objects are Objects to be borrowed from the library</definition>
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -281,17 +390,13 @@ Media_Objects are Objects to be borrowed from the library</definition>
 
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties"/>
     
 
 
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties"/>
     
 
 
@@ -316,8 +421,6 @@ Media_Objects are Objects to be borrowed from the library</definition>
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -363,8 +466,6 @@ Media_Objects are Objects to be borrowed from the library</definition>
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -382,8 +483,6 @@ Media_Objects are Objects to be borrowed from the library</definition>
     <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
