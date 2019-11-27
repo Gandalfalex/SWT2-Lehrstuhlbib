@@ -1,771 +1,1158 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#"
-     xml:base="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/pdt/ontologies/2019/10/swt2-lehrstuhl-bibo"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4">
-        <definition>Customers are incompatibleWith Employees, they use the service the library provides</definition>
-        <definition>Every Media_Object should inherit from this Base Class.
-Media_Objects are Objects to be borrowed from the library</definition>
-        <definition>Users can be devided into Employees, who use the System (therefor are some kind of Users) and Customers.</definition>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#definition -->
-
-    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#definition"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CatalogueProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CatalogueProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanProperties"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#MediaProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#MediaProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#MediaProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banCustomer -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banCustomer">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banEmployee -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#banEmployee">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#enableEmployee"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#checkAvailability -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#checkAvailability">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CatalogueProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#createEmployee -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#createEmployee">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#createUser -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#createUser">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerID -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editAdmin -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editAdmin">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editCustomer -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editCustomer">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editEmployee -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#editEmployee">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#enableEmployee -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#enableEmployee">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AdminProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasBorrowRight -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasBorrowRight">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasMedia -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasMedia">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanProperties"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasUser -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasUser">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanProperties"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasUsergroup -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasUsergroup">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#incorporateMedia -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#incorporateMedia">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EmployeeProperties"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderAskFor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderAskFor">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderDelete -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderDelete">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderEdit -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderEdit">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderNew -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderNew">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#registerMedia -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#registerMedia">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CatalogueProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#searchMedia -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#searchMedia">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CatalogueProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#unregisterMedia -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#unregisterMedia">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CatalogueProperties"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#UserProperties"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#address">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerID -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerID">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#customerProperties"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#employeeProperties"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#end_date -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#end_date">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#extendable -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#extendable">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#first_name">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasCreationDate -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasCreationDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderManagment"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasExpiringDate -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasExpiringDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderManagment"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasMediaID -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasMediaID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderManagment"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasUserID -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#hasUserID">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderManagment"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#last_name">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderManagment -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#preOrderManagment">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#staffID">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#start_date -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#start_date">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AuthorizationRight -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AuthorizationRight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#ValuePartition"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedCustomer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedCustomer">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-                    <owl:Class>
-                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BorrowRight"/>
-                    </owl:Class>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedEmployee">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Book -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Book">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BorrowRight -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BorrowRight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#AuthorizationRight"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CD -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CD">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Catalogue -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Catalogue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#DomainThing"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#DomainThing -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#DomainThing"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EnabledCustomer -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EnabledCustomer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Customer"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EnabledEmployee -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EnabledEmployee">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Employee"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#LoanManagement">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#DomainThing"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Magazin -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Magazin">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Catalogue"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrder">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#PreOrderManagment">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#DomainThing"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#User">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#DomainThing"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#ValuePartition -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#ValuePartition"/>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#VideoBlueRay -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#VideoBlueRay">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#VideoDVD -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#VideoDVD">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Media"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Admin"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#BannedCustomer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EnabledCustomer"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#EnabledEmployee"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Book"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#CD"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#Magazin"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#VideoBlueRay"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/ich/ontologies/2019/10/untitled-ontology-4#VideoDVD"/>
-        </owl:members>
-    </rdf:Description>
-</rdf:RDF>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/pdt/ontologies/2019/10/swt2-lehrstuhl-bibo">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Admin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CatalogManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Customer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DomainThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Employee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Loan"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LoanManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaArticle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaArticleType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreOrder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PreOrderManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Privilege"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ValuePartition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCatalogManagementSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLoanManagementSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLoanMediaArticle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLoanSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLoanUser"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLoans"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMediaArticleSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMediaArticleType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMediaArticles"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreOrderManagementSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreOrderMediaArticle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreOrderSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreOrderUser"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPreOrders"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrivilege"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUserGroup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUserGroupSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUserManagementSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUserSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUsers"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBatch"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFirstName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHousenumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasISBN"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIssueDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLastName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLoanAttribute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMediaArticleID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPreOrderAttribute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStartDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStreet"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTopic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUserAttribute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUserID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValiditiyDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasZipcode"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CatalogManager"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Loan1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LoanManager"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticle1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticle2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticleTypeBook"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticleTypeCD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticleTypeMagazin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticleTypePaper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticleTypeVideoBLUERAY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MediaArticleTypeVideoDVD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PreOrder1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PreOrderManager"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PrivilegeAdminRights"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PrivilegeBorrowRights"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#User2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserGroupAdmin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserGroupCustomer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserGroupEmployee"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserManager"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Admin"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasUserGroup"/>
+                <NamedIndividual IRI="#UserGroupAdmin"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Customer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasUserGroup"/>
+                <NamedIndividual IRI="#UserGroupCustomer"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Employee"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasUserGroup"/>
+                <NamedIndividual IRI="#UserGroupEmployee"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Admin"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatalogManagement"/>
+        <Class IRI="#Management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CatalogManagement"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMediaArticles"/>
+            <Class IRI="#MediaArticle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Customer"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Employee"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Loan"/>
+        <Class IRI="#DomainThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Loan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLoanMediaArticle"/>
+            <Class IRI="#MediaArticle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Loan"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLoanUser"/>
+            <Class IRI="#User"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Loan"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasEndDate"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Loan"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasStartDate"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LoanManagement"/>
+        <Class IRI="#Management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LoanManagement"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLoans"/>
+            <Class IRI="#Loan"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Management"/>
+        <Class IRI="#DomainThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <Class IRI="#DomainThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasMediaArticleType"/>
+            <Class IRI="#MediaArticleType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasAuthor"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasBatch"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasContent"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasISBN"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasMediaArticleID"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasTitle"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticle"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasTopic"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaArticleType"/>
+        <Class IRI="#ValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrder"/>
+        <Class IRI="#DomainThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrder"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPreOrderMediaArticle"/>
+            <Class IRI="#MediaArticle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrder"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPreOrderUser"/>
+            <Class IRI="#User"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrder"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasIssueDate"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrder"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasValiditiyDate"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrderManagement"/>
+        <Class IRI="#Management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PreOrderManagement"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPreOrders"/>
+            <Class IRI="#PreOrder"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Privilege"/>
+        <Class IRI="#ValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <Class IRI="#DomainThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasUserGroup"/>
+            <Class IRI="#UserGroup"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasFirstName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasHousenumber"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasLastName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasStreet"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasUserID"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasZipcode"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserGroup"/>
+        <Class IRI="#ValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserManagement"/>
+        <Class IRI="#Management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserManagement"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasUsers"/>
+            <Class IRI="#User"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#CatalogManagement"/>
+        <Class IRI="#LoanManagement"/>
+        <Class IRI="#PreOrderManagement"/>
+        <Class IRI="#UserManagement"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DomainThing"/>
+        <Class IRI="#ValuePartition"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Loan"/>
+        <Class IRI="#Management"/>
+        <Class IRI="#MediaArticle"/>
+        <Class IRI="#PreOrder"/>
+        <Class IRI="#User"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MediaArticleType"/>
+        <Class IRI="#Privilege"/>
+        <Class IRI="#UserGroup"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#CatalogManagement"/>
+        <NamedIndividual IRI="#CatalogManager"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Loan"/>
+        <NamedIndividual IRI="#Loan1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LoanManagement"/>
+        <NamedIndividual IRI="#LoanManager"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticle"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticle"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticleTypeBook"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticleTypeCD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticleTypeMagazin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticleTypePaper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticleTypeVideoBLUERAY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticleTypeVideoDVD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PreOrder"/>
+        <NamedIndividual IRI="#PreOrder1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PreOrderManagement"/>
+        <NamedIndividual IRI="#PreOrderManager"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Privilege"/>
+        <NamedIndividual IRI="#PrivilegeAdminRights"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Privilege"/>
+        <NamedIndividual IRI="#PrivilegeBorrowRights"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Admin"/>
+        <NamedIndividual IRI="#User1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Customer"/>
+        <NamedIndividual IRI="#User2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UserGroup"/>
+        <NamedIndividual IRI="#UserGroupAdmin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UserGroup"/>
+        <NamedIndividual IRI="#UserGroupCustomer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UserGroup"/>
+        <NamedIndividual IRI="#UserGroupEmployee"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UserManagement"/>
+        <NamedIndividual IRI="#UserManager"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMediaArticles"/>
+        <NamedIndividual IRI="#CatalogManager"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMediaArticles"/>
+        <NamedIndividual IRI="#CatalogManager"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLoanMediaArticle"/>
+        <NamedIndividual IRI="#Loan1"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLoanUser"/>
+        <NamedIndividual IRI="#Loan1"/>
+        <NamedIndividual IRI="#User2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLoans"/>
+        <NamedIndividual IRI="#LoanManager"/>
+        <NamedIndividual IRI="#Loan1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <NamedIndividual IRI="#MediaArticleTypeBook"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMediaArticleType"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <NamedIndividual IRI="#MediaArticleTypePaper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPreOrderMediaArticle"/>
+        <NamedIndividual IRI="#PreOrder1"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPreOrderUser"/>
+        <NamedIndividual IRI="#PreOrder1"/>
+        <NamedIndividual IRI="#User1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPreOrders"/>
+        <NamedIndividual IRI="#PreOrderManager"/>
+        <NamedIndividual IRI="#PreOrder1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrivilege"/>
+        <NamedIndividual IRI="#UserGroupAdmin"/>
+        <NamedIndividual IRI="#PrivilegeAdminRights"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrivilege"/>
+        <NamedIndividual IRI="#UserGroupAdmin"/>
+        <NamedIndividual IRI="#PrivilegeBorrowRights"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrivilege"/>
+        <NamedIndividual IRI="#UserGroupCustomer"/>
+        <NamedIndividual IRI="#PrivilegeBorrowRights"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPrivilege"/>
+        <NamedIndividual IRI="#UserGroupEmployee"/>
+        <NamedIndividual IRI="#PrivilegeBorrowRights"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUsers"/>
+        <NamedIndividual IRI="#UserManager"/>
+        <NamedIndividual IRI="#User1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUsers"/>
+        <NamedIndividual IRI="#UserManager"/>
+        <NamedIndividual IRI="#User2"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEndDate"/>
+        <NamedIndividual IRI="#Loan1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2019-12-01T10:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStartDate"/>
+        <NamedIndividual IRI="#Loan1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2019-09-20T10:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAuthor"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal>Rainer</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBatch"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal>Dieses Buch hat INHALT!</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasISBN"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal>420</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMediaArticleID"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTitle"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal>Buch</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTopic"/>
+        <NamedIndividual IRI="#MediaArticle1"/>
+        <Literal>Topic</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAuthor"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal>Der Author</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBatch"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasContent"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal>Entspannende Tamborin Musik für zwischendurch.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasISBN"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal>840</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMediaArticleID"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTitle"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal>Lärm</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasTopic"/>
+        <NamedIndividual IRI="#MediaArticle2"/>
+        <Literal>How to die inside</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasIssueDate"/>
+        <NamedIndividual IRI="#PreOrder1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-15T11:55:42</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasValiditiyDate"/>
+        <NamedIndividual IRI="#PreOrder1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2019-12-15T11:55:42</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCatalogManagementSubject"/>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLoanManagementSubject"/>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLoanMediaArticle"/>
+        <ObjectProperty IRI="#hasLoanSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLoanSubject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLoanUser"/>
+        <ObjectProperty IRI="#hasLoanSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLoans"/>
+        <ObjectProperty IRI="#hasLoanManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMediaArticleSubject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMediaArticleType"/>
+        <ObjectProperty IRI="#hasMediaArticleSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMediaArticles"/>
+        <ObjectProperty IRI="#hasCatalogManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreOrderManagementSubject"/>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreOrderMediaArticle"/>
+        <ObjectProperty IRI="#hasPreOrderSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreOrderSubject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreOrderUser"/>
+        <ObjectProperty IRI="#hasPreOrderSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPreOrders"/>
+        <ObjectProperty IRI="#hasPreOrderManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrivilege"/>
+        <ObjectProperty IRI="#hasUserGroupSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUserGroup"/>
+        <ObjectProperty IRI="#hasUserSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUserGroupSubject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUserManagementSubject"/>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUserSubject"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUsers"/>
+        <ObjectProperty IRI="#hasUserManagementSubject"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCatalogManagementSubject"/>
+        <Class IRI="#CatalogManagement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLoanManagementSubject"/>
+        <Class IRI="#LoanManagement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLoanSubject"/>
+        <Class IRI="#Loan"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+        <Class IRI="#Management"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreOrderManagementSubject"/>
+        <Class IRI="#PreOrderManagement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPreOrderSubject"/>
+        <Class IRI="#PreOrder"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUserGroupSubject"/>
+        <Class IRI="#UserGroup"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUserManagementSubject"/>
+        <Class IRI="#UserManagement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUserSubject"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLoanMediaArticle"/>
+        <Class IRI="#MediaArticle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLoanUser"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMediaArticleType"/>
+        <Class IRI="#MediaArticleType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreOrderMediaArticle"/>
+        <Class IRI="#MediaArticle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPreOrderUser"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasLoanSubject"/>
+        <ObjectProperty IRI="#hasManagementSubject"/>
+        <ObjectProperty IRI="#hasMediaArticleSubject"/>
+        <ObjectProperty IRI="#hasPreOrderSubject"/>
+        <ObjectProperty IRI="#hasUserGroupSubject"/>
+        <ObjectProperty IRI="#hasUserSubject"/>
+    </DisjointObjectProperties>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAddress"/>
+        <DataProperty IRI="#hasUserAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAuthor"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBatch"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasContent"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEndDate"/>
+        <DataProperty IRI="#hasLoanAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFirstName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasHousenumber"/>
+        <DataProperty IRI="#hasAddress"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasISBN"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasIssueDate"/>
+        <DataProperty IRI="#hasPreOrderAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasLastName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasLoanAttribute"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMediaArticleID"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasName"/>
+        <DataProperty IRI="#hasUserAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasPreOrderAttribute"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasStartDate"/>
+        <DataProperty IRI="#hasLoanAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasStreet"/>
+        <DataProperty IRI="#hasAddress"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTitle"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTopic"/>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasUserAttribute"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasUserID"/>
+        <DataProperty IRI="#hasUserAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasValiditiyDate"/>
+        <DataProperty IRI="#hasPreOrderAttribute"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasZipcode"/>
+        <DataProperty IRI="#hasAddress"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLoanAttribute"/>
+        <Class IRI="#Loan"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+        <Class IRI="#MediaArticle"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPreOrderAttribute"/>
+        <Class IRI="#PreOrder"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUserAttribute"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAddress"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAuthor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBatch"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasContent"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEndDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHousenumber"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasISBN"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIssueDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLoanAttribute"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMediaArticleAttribute"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMediaArticleID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPreOrderAttribute"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStartDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStreet"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTitle"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTopic"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUserAttribute"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUserID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasValiditiyDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasZipcode"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
 
 
 
