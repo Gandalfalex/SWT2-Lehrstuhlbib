@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/pdt/ontologies/2019/10/swt2-lehrstuhl-bibo">
+    <Prefix name="" IRI="http://www.semanticweb.org/pdt/ontologies/2019/10/swt2-lehrstuhl-bibo"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -40,6 +41,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MediaArticleType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OverdraftFee"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PreOrder"/>
@@ -91,6 +95,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasMediaArticles"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOverdraftFee"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasPreOrderManagementSubject"/>
@@ -226,6 +233,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MediaArticleTypeVideoDVD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Overdraft"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#PreOrder1"/>
@@ -422,6 +432,10 @@
         <Class IRI="#ValuePartition"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OverdraftFee"/>
+        <Class IRI="#ValuePartition"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PreOrder"/>
         <Class IRI="#DomainThing"/>
     </SubClassOf>
@@ -555,7 +569,19 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#MediaArticleType"/>
+        <Class IRI="#OverdraftFee"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MediaArticleType"/>
         <Class IRI="#Privilege"/>
+        <Class IRI="#UserGroup"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OverdraftFee"/>
+        <Class IRI="#Privilege"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OverdraftFee"/>
         <Class IRI="#UserGroup"/>
     </DisjointClasses>
     <ClassAssertion>
@@ -601,6 +627,10 @@
     <ClassAssertion>
         <Class IRI="#MediaArticleType"/>
         <NamedIndividual IRI="#MediaArticleTypeVideoDVD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OverdraftFee"/>
+        <NamedIndividual IRI="#Overdraft"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#PreOrder"/>
@@ -661,6 +691,11 @@
         <ObjectProperty IRI="#hasLoanUser"/>
         <NamedIndividual IRI="#Loan1"/>
         <NamedIndividual IRI="#User2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOverdraftFee"/>
+        <NamedIndividual IRI="#Loan1"/>
+        <NamedIndividual IRI="#Overdraft"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasLoans"/>
@@ -851,6 +886,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasMediaArticles"/>
         <ObjectProperty IRI="#hasCatalogManagementSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOverdraftFee"/>
+        <ObjectProperty IRI="#hasLoanSubject"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPreOrderManagementSubject"/>
